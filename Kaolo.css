@@ -1,0 +1,51 @@
+h1 {
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#window {
+    margin: 10px auto;
+    max-width: 854px;
+    align-items: center;
+}
+
+#videoname {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#spacing {
+    text-align: center;
+    color:gray;
+}
+#comments {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.commentbar {
+    width: 800px !important;
+    box-sizing: border-box;
+}
+
+#mailstyle{
+    width: 225px;
+}
+#username{
+    font-family: 'Franklin Gothic heavy', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    height: 2px;
+    font-size: 20px;
+}
+
+#email {
+
+    color : gray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 12.5px;
+    height: 2px;
+        font-weight:normal;
+}
+#content {
+    font-family: 'Franklin Gothic regular', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    font-weight:normal;
+}

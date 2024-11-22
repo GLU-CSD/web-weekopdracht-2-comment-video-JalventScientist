@@ -1,45 +1,53 @@
-<?php
-include("config.php");
-include("reactions.php");
-
-$getReactions = Reactions::getReactions();
-//uncomment de volgende regel om te kijken hoe de array van je reactions eruit ziet
-// echo "<pre>".var_dump($getReactions)."</pre>";
-
-if(!empty($_POST)){
-
-    //dit is een voorbeeld array.  Deze waardes moeten erin staan.
-    $postArray = [
-        'name' => "Ieniminie",
-        'email' => "ieniminie@sesamstraat.nl",
-        'message' => "Geweldig dit"
-    ];
-
-    $setReaction = Reactions::setReaction($postArray);
-
-    if(isset($setReaction['error']) && $setReaction['error'] != ''){
-        prettyDump($setReaction['error']);
-    }
-    
-
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youtube remake</title>
+    <title>DOG.mp4</title>
+    <link rel="stylesheet" href="Kaolo.css">
 </head>
+
 <body>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=twI61ZGDECBr4ums" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div id="window">
+        <h1>[Insert YT Ripoff name here]</h1>
+        <video id="movie" width="854" height="480" controls>
+            <source src="movies/DOG.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h2 id="videoname">DOG</h2>
+        <h3 id="spacing">________________________</h3>
+        <script type="text/javascript">
+            function validateForm(e){
+                var name = document.forms["usercomment"]._name.value;
+                var mail = document.forms["usercomment"]._mail.value;
+                var c_content = document.forms["usercomment"]._comment.value;
+                if ((name == "" || name == null) || (c_content == "" || c_content == null) || (mail == "" || mail == null)){
+                    alert("fill all fields before submitting!");
+                    return false;
+                }
 
-    <h2>Hieronder komen reacties</h2>
-    <p>Maak hier je eigen pagina van aan de hand van de opdracht</p>
+            }
+        </script>
+        <form method="POST" name="usercomment" onsubmit="return validateForm()" action="./DatabaseConnections/insert_DOG.php">
+            <div>
+            <input type="text" name="_name" placeholder="naam">
+            <input type="text" name="_mail" placeholder="email@adress.com" id="mailstyle">
+            </div>
+            <div>
+            <input type="text" class="commentbar" name="_comment" placeholder="comment">
+            </div>
+            <div>
+            <input type="submit" value="submit" id="submit">
+            </div>
+        </form>
+        <h3 id="spacing">________________________</h3>
+        <h2 id="comments">Comments</h2>
+        <div id="commentsection">
+            <?php
+            include  "./DatabaseConnections/connect_DOG.php";
+            ?>
+        </div>
+    </div>
 </body>
-</html>
 
-<?php
-$con->close();
-?>
+</html> 
